@@ -1,11 +1,12 @@
+import RespostaModel from "./resposta"
+
 export default class QuestaoModel {
     #id: number
     #enunciado: string
-    #respostas: any[]
+    #respostas: RespostaModel[]
     #acertou: boolean
-    // #respondida: boolean
 
-    constructor(id: number, enunciado: string, respostas: any[], acertou: boolean = false) {
+    constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou: boolean = false) {
         this.#id = id
         this.#enunciado = enunciado
         this.#respostas = respostas
@@ -29,7 +30,19 @@ export default class QuestaoModel {
     }
 
     get respondida() {
-        // FIXME: implmentar esse metodo
+        for (let resposta of this.#respostas) {
+            if (resposta.revelada) return true
+        }
+
         return false
+    }
+
+    converterParaObjeto() {
+        return {
+            id: this.#id,
+            enunciado: this.#enunciado,
+            respostas: this.#respostas.map(resp => resp.converterParaObjeto()),
+            acertou: this.#acertou,
+        }
     }
 }
