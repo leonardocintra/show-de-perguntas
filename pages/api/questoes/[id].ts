@@ -3,7 +3,6 @@ import questoes from "../bancoDeQuestoes"
 export default function handler(req, res) {
 
   const idSelecionado = +req.query.id
-
   const unicaQuestaoSelecionada = questoes.filter(questao => questao.id === idSelecionado)
 
   if (unicaQuestaoSelecionada.length === 1) {

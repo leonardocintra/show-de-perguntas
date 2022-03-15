@@ -22,15 +22,19 @@ export default class RespostaModel {
     }
 
     get valor() {
-        return this.valor
+        return this.#valor
     }
 
     get certa() {
-        return this.certa
+        return this.#certa
     }
 
     get revelada() {
-        return this.revelada
+        return this.#revelada
+    }
+
+    revelar() {
+        return new RespostaModel(this.#valor, this.#certa, true)
     }
 
     converterParaObjeto() {
