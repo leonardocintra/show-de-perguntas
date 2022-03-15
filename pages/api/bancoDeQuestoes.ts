@@ -14,13 +14,13 @@ const questoes: QuestaoModel[] = [
         RespostaModel.errada("Chuchu"),
         RespostaModel.certa("Abóbora"),
     ]),
-    new QuestaoModel(101, 'Qual time já caiu pra serie B?', [
+    new QuestaoModel(102, 'Qual time já caiu pra serie B?', [
         RespostaModel.errada("São Paulo"),
         RespostaModel.errada("Chapecoense"),
         RespostaModel.errada("Flamengo"),
         RespostaModel.certa("Palmeiras"),
     ]),
-    new QuestaoModel(101, 'Qual é a rais de 121', [
+    new QuestaoModel(103, 'Qual é a rais de 121', [
         RespostaModel.errada("8"),
         RespostaModel.errada("9"),
         RespostaModel.errada("10"),

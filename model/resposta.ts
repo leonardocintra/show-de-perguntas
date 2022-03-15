@@ -1,3 +1,6 @@
+import { embaralhar } from "../functions/arrays"
+import QuestaoModel from "./questao"
+
 export default class RespostaModel {
     // pode digitar "private" ou usar # - padro es6 é o #
     #valor: string
