@@ -38,6 +38,10 @@ export default class QuestaoModel {
         return false
     }
 
+    get naoRespondida() {
+        return !this.respondida
+    }
+
     responderCom(indice: number): QuestaoModel {
         // o "?" depois de indice serve para pegar o valor somente se o indice for valido
         // o usuario pode colocar um indice invalido, entao a resposta sera false
@@ -48,7 +52,7 @@ export default class QuestaoModel {
             const deveRevelar = respostaSelecionada || resposta.certa
             return deveRevelar ? resposta.revelar() : resposta
         })
-        
+
         return new QuestaoModel(this.id, this.enunciado, respostas, acertou)
     }
 

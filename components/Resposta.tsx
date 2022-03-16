@@ -49,9 +49,11 @@ export default function Resposta(props: RespostaProps) {
         <div className={styles.resposta}
             onClick={() => props.respostaFornecida(props.indice)}>
             <div className={styles.conteudoResposta}>
-                {/* {renderFrenteCartao()} */}
-
-                {renderVersoCartao()}
+                {!resposta.revelada ? (
+                    renderFrenteCartao()
+                ) : (
+                    renderVersoCartao()
+                )}
             </div>
         </div>
     )

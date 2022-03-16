@@ -16,8 +16,13 @@ export default function Home() {
 
 
   function respostaFornecida(indice: number) {
-    console.log(indice)
     setQuestao(questao.responderCom(indice))
+  }
+
+  function tempoEsgotado() {
+    if (questao.naoRespondida) {
+      setQuestao(questao.responderCom(-1))
+    }
   }
 
   return (
@@ -27,7 +32,9 @@ export default function Home() {
       alignItems: 'center',
       height: '100vh'
     }}>
-      <Questao valor={questaoMoc} respostaFornecida={respostaFornecida} />
+      <Questao valor={questao}
+        respostaFornecida={respostaFornecida}
+        tempoEsgotado={tempoEsgotado} />
     </div>
   )
 }
