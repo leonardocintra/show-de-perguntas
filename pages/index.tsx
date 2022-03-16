@@ -59,7 +59,13 @@ export default function Home() {
   }
 
   function finalizar() {
-    router.push("/resultado")
+    router.push({
+      pathname: "/resultado",
+      query: {
+        total: idsDasQuestoes.length,
+        certas: respostasCertas
+      }
+    })
   }
 
   return (
