@@ -12,6 +12,7 @@ interface RespostaProps {
 export default function Resposta(props: RespostaProps) {
 
     const resposta = props.valor
+    const respostaRevelada = resposta.revelada ? styles.respostaRevelada : ''
 
     function renderFrenteCartao() {
         return (
@@ -48,12 +49,9 @@ export default function Resposta(props: RespostaProps) {
     return (
         <div className={styles.resposta}
             onClick={() => props.respostaFornecida(props.indice)}>
-            <div className={styles.conteudoResposta}>
-                {!resposta.revelada ? (
-                    renderFrenteCartao()
-                ) : (
-                    renderVersoCartao()
-                )}
+            <div className={`${respostaRevelada} ${styles.conteudoResposta}`}>
+                {renderFrenteCartao()}
+                {renderVersoCartao()}
             </div>
         </div>
     )
